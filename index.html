@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year 2026</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+    font-family: Arial, sans-serif;
+    perspective: 1000px;
+}
+
+/* ===== GOLDEN STAR SKY ===== */
+.sky {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(2px 2px at 5% 10%, gold, transparent),
+      radial-gradient(2px 2px at 15% 30%, gold, transparent),
+      radial-gradient(2px 2px at 25% 70%, gold, transparent),
+      radial-gradient(2px 2px at 35% 50%, gold, transparent),
+      radial-gradient(2px 2px at 45% 20%, gold, transparent),
+      radial-gradient(2px 2px at 55% 80%, gold, transparent),
+      radial-gradient(2px 2px at 65% 40%, gold, transparent),
+      radial-gradient(2px 2px at 75% 60%, gold, transparent),
+      radial-gradient(2px 2px at 85% 30%, gold, transparent),
+      radial-gradient(2px 2px at 95% 50%, gold, transparent);
+    background-size: 250px 250px;
+    animation: twinkle 3s infinite alternate, skyMove 30s linear infinite;
+    filter: drop-shadow(0 0 12px gold) drop-shadow(0 0 20px orange);
+}
+
+/* Twinkle animation */
+@keyframes twinkle {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* Slight background movement */
+@keyframes skyMove {
+    0% { background-position: 0 0; }
+    100% { background-position: -500px -500px; }
+}
+
+/* ===== CENTER TEXT ===== */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 30;
+    animation: floatText 6s ease-in-out infinite alternate;
+}
+
+.center h1 {
+    font-size: 70px;
+    color: gold;
+    text-shadow:
+        0 0 20px gold,
+        0 0 40px orange,
+        0 0 40px red,
+        0 0 60px yellow,
+        0 0 70px gold;
+}
+
+.center h2 {
+    font-size: 90px;
+    color: goldenrod;
+    text-shadow:
+        0 0 20px gold,
+        0 0 50px orange,
+        0 0 60px yellow,
+        0 0 70px gold;
+}
+
+@keyframes floatText {
+    0% { transform: translate(-50%, -50%) translateY(0) rotateX(0deg); }
+    50% { transform: translate(-50%, -50%) translateY(-25px) rotateX(10deg); }
+    100% { transform: translate(-50%, -50%) translateY(0) rotateX(0deg); }
+}
+
+/* ===== FIREWORKS ===== */
+.firework {
+    position: absolute;
+    animation: explode 2s infinite, floatFire 4s ease-in-out infinite alternate;
+}
+
+.firework::before {
+    content: "✦";
+    font-size: 14px;
+    color: gold;
+    text-shadow:
+        0 0 50px gold,
+        0 0 40px orange,
+        0 0 30px red,
+        0 0 20px yellow;
+}
+
+/* Fireworks scaling and fading */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(2); opacity: 0.9; }
+    100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* Fireworks floating movement */
+@keyframes floatFire {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* ===== SPARKS AROUND FIREWORKS ===== */
+.spark {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: gold;
+    box-shadow: 0 0 10px gold, 0 0 15px orange, 0 0 20px red;
+    animation: sparkMove linear infinite;
+}
+
+@keyframes sparkMove {
+    0% { transform: translate(0,0) scale(1); opacity: 1; }
+    50% { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0.6; }
+    100% { transform: translate(0,0) scale(1); opacity: 0; }
+}
+
+/* ===== FIREWORK POSITIONS (40) ===== */
+.fw1 { top:55%; left:55%; }
+.fw2 { top:10%; left:20%; }
+.fw3 { top:15%; left:40%; }
+.fw4 { top:10%; left:60%; }
+.fw5 { top:5%; left:80%; }
+.fw6 { top:25%; left:10%; }
+.fw7 { top:30%; left:30%; }
+.fw8 { top:35%; left:50%; }
+.fw9 { top:30%; left:70%; }
+.fw10 { top:25%; left:90%; }
+.fw11 { top:45%; left:5%; }
+.fw12 { top:50%; left:25%; }
+.fw13 { top:55%; left:45%; }
+.fw14 { top:50%; left:65%; }
+.fw15 { top:45%; left:85%; }
+.fw16 { top:65%; left:10%; }
+.fw17 { top:70%; left:30%; }
+.fw18 { top:75%; left:50%; }
+.fw19 { top:70%; left:70%; }
+.fw20 { top:65%; left:90%; }
+.fw21 { top:85%; left:5%; }
+.fw22 { top:90%; left:20%; }
+.fw23 { top:85%; left:40%; }
+.fw24 { top:90%; left:60%; }
+.fw25 { top:85%; left:80%; }
+.fw26 { top:20%; left:50%; }
+.fw27 { top:40%; left:15%; }
+.fw28 { top:60%; left:35%; }
+.fw29 { top:80%; left:55%; }
+.fw30 { top:40%; left:85%; }
+.fw31 { top:15%; left:75%; }
+.fw32 { top:35%; left:5%; }
+.fw33 { top:55%; left:95%; }
+.fw34 { top:75%; left:15%; }
+.fw35 { top:95%; left:35%; }
+.fw36 { top:95%; left:55%; }
+.fw37 { top:75%; left:75%; }
+.fw38 { top:55%; left:60%; }
+.fw39 { top:35%; left:90%; }
+.fw40 { top:20%; left:95%; }
+</style>
+</head>
+<body>
+<audio id="bgMusic" autoplay loop>
+    <source src="mx.mp3" type="audio/mpeg">
+   
+</audio>
+<div class="sky"></div>
+
+<!-- FIREWORKS -->
+<div class="firework fw1"></div><div class="firework fw2"></div><div class="firework fw3"></div>
+<div class="firework fw4"></div><div class="firework fw5"></div><div class="firework fw6"></div>
+<div class="firework fw7"></div><div class="firework fw8"></div><div class="firework fw9"></div>
+<div class="firework fw10"></div><div class="firework fw11"></div><div class="firework fw12"></div>
+<div class="firework fw13"></div><div class="firework fw14"></div><div class="firework fw15"></div>
+<div class="firework fw16"></div><div class="firework fw17"></div><div class="firework fw18"></div>
+<div class="firework fw19"></div><div class="firework fw20"></div><div class="firework fw21"></div>
+<div class="firework fw22"></div><div class="firework fw23"></div><div class="firework fw24"></div>
+<div class="firework fw25"></div><div class="firework fw26"></div><div class="firework fw27"></div>
+<div class="firework fw28"></div><div class="firework fw29"></div><div class="firework fw30"></div>
+<div class="firework fw31"></div><div class="firework fw32"></div><div class="firework fw33"></div>
+<div class="firework fw34"></div><div class="firework fw35"></div><div class="firework fw36"></div>
+<div class="firework fw37"></div><div class="firework fw38"></div><div class="firework fw39"></div>
+<div class="firework fw40"></div>
+
+<!-- TEXT -->
+<div class="center">
+    <h1>HAPPY NEW YEAR</h1>
+    <h2>2026</h2>
+</div>
+
+<script>
+const music=document.getElementById("bgMusic");
+document.addEventListener("click",()=>{ if(music.paused) music.play(); },{once:true});
+
+// Add sparks around each firework
+document.querySelectorAll('.firework').forEach(fw => {
+    for(let i=0;i<10;i++){
+        const spark = document.createElement('div');
+        spark.className='spark';
+        spark.style.setProperty('--x', (Math.random()*120-60)+'px');
+        spark.style.setProperty('--y', (Math.random()*120-60)+'px');
+        spark.style.animationDuration = (1+Math.random()*1)+'s';
+        fw.appendChild(spark);
+    }
+});
+</script>
+</body>
+</html>
